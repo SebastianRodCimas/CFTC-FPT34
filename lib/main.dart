@@ -29,7 +29,7 @@ class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 5,
+      seconds: 4,
       backgroundColor: Color(4281415051),
       image: Image.asset('assets/logo.png'),
       loaderColor: Color(4279598252),

@@ -149,11 +149,15 @@ class _CalendrierState extends State<Calendrier1> {
               ),
               ..._selectformation.map((formation) => ListTile(
                     title: Text(formation),
+                    contentPadding: EdgeInsets.fromLTRB(50, 5, 0, 0),
+                    selected: true,
+                    selectedTileColor: Color(0xFF47348B),
                   )),
               Stack(
                 children: <Widget>[
                   Positioned(
                     left: 25,
+                    top: 10,
                     child: FloatingActionButton(
                       heroTag: "supprimer une formation",
                       child: Icon(Icons.remove_circle_outline_rounded),
@@ -163,8 +167,9 @@ class _CalendrierState extends State<Calendrier1> {
                       foregroundColor: Color(4282856587),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment(0.85, 0.00),
+                  Positioned(
+                    right: 25,
+                    top: 10,
                     child: FloatingActionButton(
                         heroTag: "ajouter une formation",
                         shape: CircleBorder(),

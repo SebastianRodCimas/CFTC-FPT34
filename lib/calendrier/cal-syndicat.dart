@@ -149,6 +149,9 @@ class _CalendrierState extends State<Calendrier2> {
               ),
               ..._selectformation.map((formation) => ListTile(
                     title: Text(formation),
+                    contentPadding: EdgeInsets.fromLTRB(50, 5, 0, 0),
+                    selected: true,
+                    selectedTileColor: Color(0xFF47348B),
                   )),
               Stack(
                 children: <Widget>[
@@ -158,7 +161,7 @@ class _CalendrierState extends State<Calendrier2> {
                       heroTag: "supprimer une formation",
                       child: Icon(Icons.remove_circle_outline_rounded),
                       splashColor: Color(4282856587),
-                      onPressed: _removeFormation,
+                      onPressed: _removeSyndicale,
                       backgroundColor: Colors.blue,
                       foregroundColor: Color(4282856587),
                     ),
@@ -170,7 +173,7 @@ class _CalendrierState extends State<Calendrier2> {
                         shape: CircleBorder(),
                         child: Icon(Icons.add),
                         splashColor: Color(0xFF23398E),
-                        onPressed: _addFormation,
+                        onPressed: _addSyndicale,
                         foregroundColor: Color(4280498574)),
                   ),
                   Stack(children: <Widget>[
@@ -192,7 +195,7 @@ class _CalendrierState extends State<Calendrier2> {
             ])));
   }
 
-  _removeFormation() async {
+  _removeSyndicale() async {
     await showDialog(
         context: context,
         builder: (context) => AlertDialog(
@@ -225,7 +228,7 @@ class _CalendrierState extends State<Calendrier2> {
     });
   }
 
-  _addFormation() async {
+  _addSyndicale() async {
     await showDialog(
         context: context,
         builder: (context) => AlertDialog(
