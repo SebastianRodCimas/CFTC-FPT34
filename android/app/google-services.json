@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "62380489682",
+    "project_id": "cftc-fpt",
+    "storage_bucket": "cftc-fpt.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62380489682:android:289a6cbeb37bf8b923260b",
+        "android_client_info": {
+          "package_name": "com.example.cftc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62380489682-i2gclcg147o90np4osh9676s6l6btfn6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVLV1u7VEQsCdlcR2_lWHkuw1fHIGu5t0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62380489682-i2gclcg147o90np4osh9676s6l6btfn6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
