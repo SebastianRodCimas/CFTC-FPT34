@@ -45,6 +45,39 @@ class _CalendrierState extends State<Calendrier2> {
     return newMap;
   }
 
+  _removeSyndicale() async {
+    await showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: TextField(
+                controller: _formationController,
+              ),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text("Enlevez une formation"),
+                  onPressed: () {
+                    if (_formationController.text.isEmpty) return;
+                    if (_formation[_controller.selectedDay] != null) {
+                      _formation[_controller.selectedDay]
+                          .remove(_formationController.text);
+                    } else {
+                      _formation[_controller.selectedDay] = [
+                        _formationController.text
+                      ];
+                    }
+                    prefs.setString(
+                        "formation", json.encode(encodeMap(_formation)));
+                    _formationController.clear();
+                    Navigator.pop(context);
+                  },
+                )
+              ],
+            ));
+    setState(() {
+      _selectformation = _formation[_controller.selectedDay];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,15 +88,20 @@ class _CalendrierState extends State<Calendrier2> {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -193,39 +231,6 @@ class _CalendrierState extends State<Calendrier2> {
                 ],
               )
             ])));
-  }
-
-  _removeSyndicale() async {
-    await showDialog(
-        context: context,
-        builder: (context) => AlertDialog(
-              content: TextField(
-                controller: _formationController,
-              ),
-              actions: <Widget>[
-                FlatButton(
-                  child: Text("Enlevez une formation"),
-                  onPressed: () {
-                    if (_formationController.text.isEmpty) return;
-                    if (_formation[_controller.selectedDay] != null) {
-                      _formation[_controller.selectedDay]
-                          .remove(_formationController.text);
-                    } else {
-                      _formation[_controller.selectedDay] = [
-                        _formationController.text
-                      ];
-                    }
-                    prefs.setString(
-                        "formation", json.encode(encodeMap(_formation)));
-                    _formationController.clear();
-                    Navigator.pop(context);
-                  },
-                )
-              ],
-            ));
-    setState(() {
-      _selectformation = _formation[_controller.selectedDay];
-    });
   }
 
   _addSyndicale() async {

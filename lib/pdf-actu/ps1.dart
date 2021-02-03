@@ -39,15 +39,20 @@ class _PS extends State<PS> {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -56,7 +61,6 @@ class _PS extends State<PS> {
         ]),
         backgroundColor: Color(0xFF360C29),
         body: _loading
-        
             ? Center(
                 child: CircularProgressIndicator(),
               )

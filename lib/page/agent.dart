@@ -13,15 +13,20 @@ class Agent extends StatelessWidget {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -35,7 +40,7 @@ class Agent extends StatelessWidget {
           Container(child: Column(children: <Widget>[])),
           ListTile(
             title: Text(
-              "                          Guides de l'agent",
+              "                      Guides de l'agent",
               style: TextStyle(
                 color: Color(0xFF01B2C0),
                 fontSize: 18,

@@ -190,15 +190,20 @@ class Accueil extends StatelessWidget {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -212,7 +217,7 @@ class Accueil extends StatelessWidget {
             child: Stack(children: [
           Positioned(
               top: 130,
-              left: 70,
+              left: 55,
               child: Text(
                 "Un syndicat constructif,\n qui vous accompagne tout au\n long de votre vie professionnelle",
                 textAlign: TextAlign.center,
@@ -234,9 +239,9 @@ class Accueil extends StatelessWidget {
             Stack(children: [
               Positioned(
                 bottom: 120.4,
-                left: 15,
+                left: 35,
                 child: Text(
-                    '474 Allée Henri II de Montmorency, 34000 Montpellier\n04 67 15 14 47\nsyndicat.cftc.territoriaux.34@gmail.com\nSyndicat CFTC ',
+                    '474 Allée Henri II de Montmorency,\n 34000 Montpellier\n04 67 15 14 47\nsyndicat.cftc.territoriaux.34@gmail.com\nSyndicat CFTC ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xFF01B2C0),

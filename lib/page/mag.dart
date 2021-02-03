@@ -15,15 +15,20 @@ class LeMag extends StatelessWidget {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w600,
+                        fontSize: 12,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -40,7 +45,7 @@ class LeMag extends StatelessWidget {
 
           ListTile(
             title: Text(
-              '                          \n\n                          Mieux vaut faire soigner\n                          sa santé que sa maladie\n',
+              '                          \n                       Mieux vaut faire soigner\n                       sa santé que sa maladie\n',
               style: TextStyle(
                 color: Color(0xFF01B2C0),
                 fontSize: 15,
@@ -87,7 +92,7 @@ class LeMag extends StatelessWidget {
 
           ListTile(
             title: Text(
-              '\n                           Reconnaître enfin le rôle \n                                essentiel de la FPT\n',
+              '\n                        Reconnaître enfin le rôle \n                              essentiel de la FPT\n',
               style: TextStyle(
                 color: Color(0xFF01B2C0),
                 fontSize: 15,
@@ -133,7 +138,7 @@ class LeMag extends StatelessWidget {
           //2
           ListTile(
             title: Text(
-              "                          L'avenir des retraites ne \n                          s'arrête pas avec le 49-3\n",
+              "                      L'avenir des retraites ne \n                      s'arrête pas avec le 49-3\n",
               style: TextStyle(
                 color: Color(0xFF01B2C0),
                 fontSize: 15,
