@@ -15,8 +15,8 @@ class LeMag extends StatelessWidget {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
-                        fontSize: 12,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 12.4,
                         color: Color(4280498574),
                       )),
             ),
@@ -25,8 +25,8 @@ class LeMag extends StatelessWidget {
                 child: Text(
                   "   CFTC-FTP 34  ",
                   style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 12.4,
+                    fontWeight: FontWeight.w800,
                     color: Color(4280498574),
                   ),
                 ),
