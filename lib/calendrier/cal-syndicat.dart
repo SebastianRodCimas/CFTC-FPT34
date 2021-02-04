@@ -89,7 +89,7 @@ class _CalendrierState extends State<Calendrier2> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
+                        fontSize: 12,
                         color: Color(4280498574),
                       )),
             ),
