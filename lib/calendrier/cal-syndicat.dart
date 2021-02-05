@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,18 +12,18 @@ class Calendrier2 extends StatefulWidget {
 class _Calendrier2State extends State<Calendrier2> {
   SharedPreferences prefs;
   CalendarController _controller;
-  Map<DateTime, List<dynamic>> _formation;
-  TextEditingController _formationController;
-  List<dynamic> _selectformation;
+  Map<DateTime, List<dynamic>> _syndicat;
+  TextEditingController _syndicatController;
+  List<dynamic> _selectsindycat;
   bool isButtonPressed = false;
 
   @override
   void initState() {
     super.initState();
-    _selectformation = [];
+    _selectsindycat = [];
     _controller = CalendarController();
-    _formation = {};
-    _formationController = TextEditingController();
+    _syndicat = {};
+    _syndicatController = TextEditingController();
 
     initPrefs();
   }
@@ -32,8 +31,8 @@ class _Calendrier2State extends State<Calendrier2> {
   initPrefs() async {
     prefs = await SharedPreferences.getInstance();
     setState(() {
-      _formation = Map<DateTime, List<dynamic>>.from(encodeMap(
-          json.decode(prefs.getString("events") ?? "{ajouté quelquechose}")));
+      _syndicat = Map<DateTime, List<dynamic>>.from(
+          decodeMap(json.decode(prefs.getString("syndicat") ?? "{}")));
     });
   }
 
@@ -41,6 +40,14 @@ class _Calendrier2State extends State<Calendrier2> {
     Map<String, dynamic> newMap = {};
     map.forEach((key, value) {
       newMap[key.toString()] = map[key];
+    });
+    return newMap;
+  }
+
+  Map<DateTime, dynamic> decodeMap(Map<String, dynamic> map) {
+    Map<DateTime, dynamic> newMap = {};
+    map.forEach((key, value) {
+      newMap[DateTime.parse(key)] = map[key];
     });
     return newMap;
   }
@@ -84,7 +91,7 @@ class _Calendrier2State extends State<Calendrier2> {
             color: Colors.white,
           )),
           TableCalendar(
-            events: _formation,
+            events: _syndicat,
             initialCalendarFormat: CalendarFormat.month,
             calendarStyle: CalendarStyle(
                 weekendStyle: TextStyle(
@@ -124,7 +131,7 @@ class _Calendrier2State extends State<Calendrier2> {
             startingDayOfWeek: StartingDayOfWeek.monday,
             onDaySelected: (date, events, _) {
               setState(() {
-                _selectformation = events;
+                _selectsindycat = events;
               });
             },
             builders: CalendarBuilders(
@@ -151,7 +158,7 @@ class _Calendrier2State extends State<Calendrier2> {
             ),
             calendarController: _controller,
           ),
-          ..._selectformation.map((formation) => ListTile(
+          ..._selectsindycat.map((formation) => ListTile(
                 title: Text(formation),
                 contentPadding: EdgeInsets.fromLTRB(50, 5, 0, 0),
                 selected: true,
@@ -196,41 +203,41 @@ class _Calendrier2State extends State<Calendrier2> {
           shape: CircleBorder(),
           child: Icon(Icons.add),
           splashColor: Color(0xFF23398E),
-          onPressed: _addFormation,
+          onPressed: _addSyndicat,
           foregroundColor: Color(4280498574)),
     );
   }
 
-  _addFormation() async {
+  _addSyndicat() async {
     await showDialog(
         context: context,
         builder: (context) => AlertDialog(
               content: TextField(
-                controller: _formationController,
+                controller: _syndicatController,
               ),
               actions: <Widget>[
                 FlatButton(
                   child: Text("Ajouté une formation"),
                   onPressed: () {
-                    if (_formationController.text.isEmpty) return;
-                    if (_formation[_controller.selectedDay] != null) {
-                      _formation[_controller.selectedDay]
-                          .add(_formationController.text);
+                    if (_syndicatController.text.isEmpty) return;
+                    if (_syndicat[_controller.selectedDay] != null) {
+                      _syndicat[_controller.selectedDay]
+                          .add(_syndicatController.text);
                     } else {
-                      _formation[_controller.selectedDay] = [
-                        _formationController.text
+                      _syndicat[_controller.selectedDay] = [
+                        _syndicatController.text
                       ];
                     }
                     prefs.setString(
-                        "formation", json.encode(encodeMap(_formation)));
-                    _formationController.clear();
+                        "formation", json.encode(encodeMap(_syndicat)));
+                    _syndicatController.clear();
                     Navigator.pop(context);
                   },
                 )
               ],
             ));
     setState(() {
-      _selectformation = _formation[_controller.selectedDay];
+      _selectsindycat = _syndicat[_controller.selectedDay];
     });
   }
 }

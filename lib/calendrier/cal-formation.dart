@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,8 +31,8 @@ class _Calendrier1State extends State<Calendrier1> {
   initPrefs() async {
     prefs = await SharedPreferences.getInstance();
     setState(() {
-      _formation = Map<DateTime, List<dynamic>>.from(encodeMap(
-          json.decode(prefs.getString("events") ?? "{ajouté quelquechose}")));
+      _formation = Map<DateTime, List<dynamic>>.from(
+          decodeMap(json.decode(prefs.getString("formation") ?? "{}")));
     });
   }
 
@@ -41,6 +40,14 @@ class _Calendrier1State extends State<Calendrier1> {
     Map<String, dynamic> newMap = {};
     map.forEach((key, value) {
       newMap[key.toString()] = map[key];
+    });
+    return newMap;
+  }
+
+  Map<DateTime, dynamic> decodeMap(Map<String, dynamic> map) {
+    Map<DateTime, dynamic> newMap = {};
+    map.forEach((key, value) {
+      newMap[DateTime.parse(key)] = map[key];
     });
     return newMap;
   }
