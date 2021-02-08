@@ -216,7 +216,7 @@ class _Calendrier1State extends State<Calendrier1> {
                 controller: _formationController,
               ),
               actions: <Widget>[
-                FlatButton(
+                TextButton(
                   child: Text("Ajouté une formation"),
                   onPressed: () {
                     if (_formationController.text.isEmpty) return;

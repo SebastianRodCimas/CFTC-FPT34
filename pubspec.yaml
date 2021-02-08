@@ -3,7 +3,7 @@ description: Application du CFTC.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -20,29 +20,21 @@ version: 1.0.1+2
 environment:
   sdk: ">=2.7.0 <3.0.0"
 
-
 dependencies:
   flutter:
-
-
-
     sdk: flutter
   splashscreen: ^1.3.5
-  table_calendar: ^2.3.3 
-  flutter_speed_dial: ^1.2.5 
-  file_picker: ^1.9.0+1  
-  image_ink_well: ^0.1.0  
+  table_calendar: ^2.3.3
+  flutter_speed_dial: ^1.2.5
+  file_picker: ^1.9.0+1
+  image_ink_well: ^0.1.0
   advance_pdf_viewer: ^1.2.1+2
-  image_cropper: ^1.3.1   
+  image_cropper: ^1.3.1
   url_launcher: ^5.2.7
   google_fonts: ^1.1.1
   font_awesome_flutter: ^8.11.0
-  flutter_clean_calendar: ^1.0.2+1 
-  shared_preferences:    
-   
-  
-  
-   
+  flutter_clean_calendar: ^1.0.2+1
+  shared_preferences:
 
 dev_dependencies:
   flutter_test:
@@ -50,31 +42,30 @@ dev_dependencies:
   integration_test:
     sdk: flutter
 
-
-
-
 flutter:
-
-
   uses-material-design: true
 
-
   assets:
-     - assets/maladie.png
-     - assets/agent.png
-     - assets/logo.png
-     - assets/protectionsocial.jpeg
-     - assets/voix-mars.png
-     - assets/voix-juin.png
-     - assets/voix-septembre.png
-     - docMag/lavoix-mars.pdf
-     - docMag/lavoix-septembre.pdf
-     - docMag/lavoix-juin.pdf
-     - docActu/protectionsociale-decembre.pdf
-     - docMaladie/maladie-2019.pdf
-     - docAgent/agent.pdf
-
-    
-
-
- 
+    - assets/maladie.png
+    - assets/agent.png
+    - assets/logo.png
+    - assets/protectionsocial.jpeg
+    - assets/mongolfiere.jpeg
+    - assets/voix-mars.png
+    - assets/voix-juin.png
+    - assets/voix-septembre.png
+    - docMag/lavoix-mars.pdf
+    - docMag/lavoix-septembre.pdf
+    - docMag/lavoix-juin.pdf
+    - docActu/protectionsociale-decembre.pdf
+    - docActu/cap.pdf
+    - docActu/reformeconges.pdf
+    - docActu/enfantconverti.pdf
+    - docActu/enfantdeceder.pdf
+    - docActu/egalitecollectivites.pdf
+    - docActu/policiersmunicipaux.pdf
+    - docActu/fonctionpublique11052020.pdf
+    - docActu/rifseep.pdf
+    - docActu/collect2020.pdf
+    - docMaladie/maladie-2019.pdf
+    - docAgent/agent.pdf

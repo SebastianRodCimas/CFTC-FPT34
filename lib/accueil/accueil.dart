@@ -233,8 +233,7 @@ class Accueil extends StatelessWidget {
           Stack(children: [
             Align(
               alignment: Alignment(0.00, -0.02),
-              child: Image.network(
-                  'https://scontent.xx.fbcdn.net/v/t1.15752-9/136953872_1057353924737104_6994581758997723631_n.jpg?_nc_cat=110&ccb=2&_nc_sid=58c789&_nc_ohc=SFO6mee8znQAX93wMND&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=8b09fc8157f226d9452c4d8f4bb1534e&oe=601F093A'),
+              child: Image.asset('assets/mongolfiere.jpeg'),
             ),
             Stack(children: [
               Positioned(
