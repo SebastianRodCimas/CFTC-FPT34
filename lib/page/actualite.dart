@@ -40,10 +40,10 @@ class Actualite extends StatelessWidget {
           Container(child: Column(children: <Widget>[])),
           ListTile(
             title: Text(
-              '                      Protection Sociale',
+              '                         Protection Sociale',
               style: TextStyle(
                 color: Color(0xFF01B2C0),
-                fontSize: 18,
+                fontSize: 16,
                 fontWeight: FontWeight.w900,
                 fontFamily: "Oswald",
               ),
@@ -64,8 +64,8 @@ class Actualite extends StatelessWidget {
                           new MaterialPageRoute(
                               builder: (context) => new PS()));
                     },
-                    width: 255,
-                    height: 122,
+                    width: 200,
+                    height: 95,
                     image: AssetImage('assets/protectionsocial.jpeg'),
                   )),
             ],
@@ -83,7 +83,7 @@ class Actualite extends StatelessWidget {
                   fontFamily: "PlayFairDisplay",
                   letterSpacing: 1,
                 ),
-              ))
+              )),
         ])));
   }
 }

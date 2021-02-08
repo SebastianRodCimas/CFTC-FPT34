@@ -54,6 +54,15 @@ flutter:
     - assets/voix-mars.png
     - assets/voix-juin.png
     - assets/voix-septembre.png
+    - assets/rifseep.png
+    - assets/cap.png
+    - assets/collectivites.png
+    - assets/egaliteprof.png
+    - assets/enfant.png
+    - assets/fonctionpublique.png
+    - assets/deces.png
+    - assets/police.png
+    - assets/ultramarin.png
     - docMag/lavoix-mars.pdf
     - docMag/lavoix-septembre.pdf
     - docMag/lavoix-juin.pdf
