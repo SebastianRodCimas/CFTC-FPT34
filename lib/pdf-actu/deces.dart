@@ -3,12 +3,12 @@ import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 
 void selectpdf() {}
 
-class PS extends StatefulWidget {
+class Deces extends StatefulWidget {
   @override
-  _PS createState() => _PS();
+  _Deces createState() => _Deces();
 }
 
-class _PS extends State<PS> {
+class _Deces extends State<Deces> {
   PDFDocument _doc;
   bool _loading;
 
@@ -21,8 +21,7 @@ class _PS extends State<PS> {
     setState(() {
       _loading = true;
     });
-    final doc =
-        await PDFDocument.fromAsset('docActu/protectionsociale-decembre.pdf');
+    final doc = await PDFDocument.fromAsset('docActu/enfantdeceder.pdf');
     setState(() {
       _doc = doc;
       _loading = false;
@@ -39,15 +38,20 @@ class _PS extends State<PS> {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 12.4,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12.4,
+                    fontWeight: FontWeight.w800,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -56,7 +60,6 @@ class _PS extends State<PS> {
         ]),
         backgroundColor: Color(0xFF360C29),
         body: _loading
-        
             ? Center(
                 child: CircularProgressIndicator(),
               )

@@ -36,22 +36,26 @@ class _Voix3 extends State<Voix3> {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w800,
+                         fontSize: 12.4,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                     fontSize: 12.4,
+                    fontWeight: FontWeight.w800,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
           ]),
           Image.asset('assets/logo.png'),
         ]),
-        backgroundColor: Color(0xFF360C29),
         body: _loading
             ? Center(
                 child: CircularProgressIndicator(),

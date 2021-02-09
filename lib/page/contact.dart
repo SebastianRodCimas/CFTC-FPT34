@@ -24,15 +24,20 @@ class Contact extends StatelessWidget {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 12.4,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12.4,
+                    fontWeight: FontWeight.w800,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -204,7 +209,7 @@ class Contact extends StatelessWidget {
           Stack(children: [
             Positioned(
                 top: 340,
-                left: 160,
+                left: 155,
                 child: Text(
                   "UD 34",
                   textAlign: TextAlign.center,

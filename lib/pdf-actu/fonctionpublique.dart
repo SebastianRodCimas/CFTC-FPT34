@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 
-class Voix1 extends StatefulWidget {
+void selectpdf() {}
+
+class FP extends StatefulWidget {
   @override
-  _Voix1 createState() => _Voix1();
+  _FP createState() => _FP();
 }
 
-class _Voix1 extends State<Voix1> {
+class _FP extends State<FP> {
   PDFDocument _doc;
   bool _loading;
 
@@ -19,7 +21,7 @@ class _Voix1 extends State<Voix1> {
     setState(() {
       _loading = true;
     });
-    final doc = await PDFDocument.fromAsset('docMag/lavoix-septembre.pdf');
+    final doc = await PDFDocument.fromAsset('docActu/fonctionpublique.pdf');
     setState(() {
       _doc = doc;
       _loading = false;

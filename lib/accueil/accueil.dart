@@ -190,15 +190,20 @@ class Accueil extends StatelessWidget {
                   Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 14,
-                        color: Color(0xFFFFFFFF),
+                        fontWeight: FontWeight.w800,
+                        fontSize: 12.4,
+                        color: Color(4280498574),
                       )),
             ),
             Row(children: [
               Center(
                 child: Text(
                   "   CFTC-FTP 34  ",
-                  style: TextStyle(fontSize: 14, color: Color(0xFFFFFFFF)),
+                  style: TextStyle(
+                    fontSize: 12.4,
+                    fontWeight: FontWeight.w800,
+                    color: Color(4280498574),
+                  ),
                 ),
               ),
             ]),
@@ -212,7 +217,7 @@ class Accueil extends StatelessWidget {
             child: Stack(children: [
           Positioned(
               top: 130,
-              left: 70,
+              left: 55,
               child: Text(
                 "Un syndicat constructif,\n qui vous accompagne tout au\n long de votre vie professionnelle",
                 textAlign: TextAlign.center,
@@ -228,15 +233,14 @@ class Accueil extends StatelessWidget {
           Stack(children: [
             Align(
               alignment: Alignment(0.00, -0.02),
-              child: Image.network(
-                  'https://scontent.xx.fbcdn.net/v/t1.15752-9/136953872_1057353924737104_6994581758997723631_n.jpg?_nc_cat=110&ccb=2&_nc_sid=58c789&_nc_ohc=SFO6mee8znQAX93wMND&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=8b09fc8157f226d9452c4d8f4bb1534e&oe=601F093A'),
+              child: Image.asset('assets/mongolfiere.jpeg'),
             ),
             Stack(children: [
               Positioned(
                 bottom: 120.4,
-                left: 15,
+                left: 35,
                 child: Text(
-                    '474 Allée Henri II de Montmorency, 34000 Montpellier\n04 67 15 14 47\nsyndicat.cftc.territoriaux.34@gmail.com\nSyndicat CFTC ',
+                    '474 Allée Henri II de Montmorency,\n 34000 Montpellier\n04 67 15 14 47\nsyndicat.cftc.territoriaux.34@gmail.com\nSyndicat CFTC ',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Color(0xFF01B2C0),

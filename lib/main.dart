@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: Screen(),
+      home: Splash(),
       title: 'CFTC',
       theme: ThemeData(
         backgroundColor: Colors.white,
@@ -20,16 +20,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Screen extends StatefulWidget {
+class Splash extends StatefulWidget {
   @override
-  _ScreenState createState() => _ScreenState();
+  _SplashState createState() => _SplashState();
 }
 
-class _ScreenState extends State<Screen> {
+class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 5,
+      seconds: 4,
       backgroundColor: Color(4281415051),
       image: Image.asset('assets/logo.png'),
       loaderColor: Color(4279598252),
