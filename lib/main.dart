@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: Splash(),
-      title: 'CFTC',
+      title: 'CFTC-FPT 34',
       theme: ThemeData(
         backgroundColor: Colors.white,
         visualDensity: VisualDensity.adaptivePlatformDensity,
