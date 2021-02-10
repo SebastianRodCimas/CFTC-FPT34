@@ -1,5 +1,5 @@
-import 'package:cftc/calendrier/cal-syndicat.dart';
-import 'package:cftc/page/agent.dart';
+import 'package:cftc_fpt_34/calendrier/cal-syndicat.dart';
+import 'package:cftc_fpt_34/page/agent.dart';
 import 'package:flutter/material.dart';
 import '../calendrier/cal-formation.dart';
 import '../page/conges.dart';

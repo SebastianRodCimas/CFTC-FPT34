@@ -39,7 +39,7 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+  
         applicationId "com.ftp34.cftc"
         minSdkVersion 16
         targetSdkVersion 30
