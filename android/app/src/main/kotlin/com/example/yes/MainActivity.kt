@@ -1,4 +1,4 @@
-package com.example.cftc
+package com.ftp34.cftc
 
 import io.flutter.embedding.android.FlutterActivity
 
