@@ -1,5 +1,5 @@
 name: cftc_fpt_34
-description: Application du CFTC.
+description: Application du CFTC-FTP 34
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
