@@ -33,7 +33,7 @@ def keystoreProperties = new Properties()
 
 android {
     compileSdkVersion 30
-
+    android.buildTypes.release.ndk.debugSymbolLevel = { SYMBOL_TABLE | FULL }
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -52,6 +52,7 @@ android {
          keyPassword keystoreProperties['keyPassword']
          storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
          storePassword keystoreProperties['storePassword']
+         
        }
    }
    
