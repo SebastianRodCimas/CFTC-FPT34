@@ -2,10 +2,12 @@ import 'package:cftc_fpt_34/pdf-agent/agents.dart';
 import 'package:flutter/material.dart';
 import 'package:image_ink_well/image_ink_well.dart';
 
+//package utilisé depuis pubspecyaml
 class Agent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+        //Header
         appBar: AppBar(actions: <Widget>[
           Row(children: [
             Center(
@@ -38,6 +40,7 @@ class Agent extends StatelessWidget {
         body: Center(
             child: ListView(children: <Widget>[
           Container(child: Column(children: <Widget>[])),
+          //Titre ayant comme lien le PDF qui lui est attritré
           ListTile(
             title: Text(
               "                      Guides de l'agent",
@@ -53,6 +56,7 @@ class Agent extends StatelessWidget {
                   new MaterialPageRoute(builder: (context) => new Agents()));
             },
           ),
+          //Image ayant comme lien le PDF qui lui est attritré
           Stack(
             children: [
               Align(

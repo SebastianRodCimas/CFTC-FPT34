@@ -13,7 +13,7 @@ class Accueil extends StatelessWidget {
     return Scaffold(
 
         //Menu Body
-
+//Liste du Drawer avec chaque onglets
         drawer: Drawer(
           child: ListView(children: <Widget>[
             DrawerHeader(
@@ -126,6 +126,8 @@ class Accueil extends StatelessWidget {
                     new MaterialPageRoute(builder: (context) => new Contact()));
               },
             ),
+
+            //Image pour ceux qui soutiennt le syndicat
             Stack(children: [
               Align(
                   child: new AspectRatio(

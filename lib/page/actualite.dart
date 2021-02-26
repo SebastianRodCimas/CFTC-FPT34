@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:image_ink_well/image_ink_well.dart';
 import '../pdf-actu/protectionsocial.dart';
 
+//touts les pages sont relié afin que chaque page soit relié à son PDF
 class Actualite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -44,8 +45,10 @@ class Actualite extends StatelessWidget {
         //Body
         backgroundColor: Color(0xFF47348B),
         body: Center(
+            //ListView pour faire pluseiurs ListTitle sous forme de colonne
             child: ListView(children: <Widget>[
           Container(child: Column(children: <Widget>[])),
+          //Config du titre
           ListTile(
             title: Text(
               '                         Protection Sociale',
@@ -56,11 +59,14 @@ class Actualite extends StatelessWidget {
                 fontFamily: "Oswald",
               ),
             ),
+            //Une fois cliqué dessus, ça nous dirige vers le PDF demandé
             onTap: () {
               Navigator.push(context,
                   new MaterialPageRoute(builder: (context) => new PS()));
             },
           ),
+
+          //Image pour présenter le titre
           Stack(
             children: [
               Align(
@@ -78,6 +84,7 @@ class Actualite extends StatelessWidget {
                   )),
             ],
           ),
+          //Titre mis pour montrer si c'est plus ou moin réçent
           Align(
               alignment: Alignment.topRight,
               child: Text(

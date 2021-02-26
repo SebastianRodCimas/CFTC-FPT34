@@ -9,13 +9,19 @@ class Calendrier1 extends StatefulWidget {
   _Calendrier1State createState() => _Calendrier1State();
 }
 
+/* Cette class va regroup toutes les variables utiliser dans le calendrier*/
 class _Calendrier1State extends State<Calendrier1> {
-  SharedPreferences prefs;
-  CalendarController _controller;
-  Map<DateTime, List<dynamic>> _formation;
-  TextEditingController _formationController;
-  List<dynamic> _selectformation;
-  bool isButtonPressed = false;
+  SharedPreferences prefs; //Provient du package shared_preferences.dart';//
+  CalendarController
+      _controller; //Provient du package table_calendar pour créer un calendrier//
+  Map<DateTime, List<dynamic>>
+      _formation; //Liste dynamic qui va permettre d'ajouté une formation//
+  TextEditingController
+      _formationController; //Cette variable va pouvoir écrire un texte quand on va add une formation//
+  List<dynamic>
+      _selectformation; //Seconde liste on va pouvoir select une formation sur le calendrier//
+  bool isButtonPressed =
+      false; //Si le button est faux , renvoie vers a la page initiale//
 
   @override
   void initState() {
@@ -55,6 +61,7 @@ class _Calendrier1State extends State<Calendrier1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Header
       appBar: AppBar(actions: <Widget>[
         Row(children: [
           Center(
@@ -90,6 +97,8 @@ class _Calendrier1State extends State<Calendrier1> {
               decoration: BoxDecoration(
             color: Colors.white,
           )),
+
+          //Structure de la formation//
           TableCalendar(
             events: _formation,
             initialCalendarFormat: CalendarFormat.month,
@@ -198,6 +207,8 @@ class _Calendrier1State extends State<Calendrier1> {
           ]),
         ],
       )),
+
+      //Bouton pour add une formation
       floatingActionButton: FloatingActionButton(
           heroTag: "ajouter une formation",
           shape: CircleBorder(),
@@ -208,10 +219,13 @@ class _Calendrier1State extends State<Calendrier1> {
     );
   }
 
+//Fonction qui add une formation
+
   _addFormation() async {
     await showDialog(
         context: context,
         builder: (context) => AlertDialog(
+              //On utilise alerte dialog pour relier le controller et _formationController
               content: TextField(
                 controller: _formationController,
               ),
@@ -219,10 +233,12 @@ class _Calendrier1State extends State<Calendrier1> {
                 TextButton(
                   child: Text("Ajouté une formation"),
                   onPressed: () {
-                    if (_formationController.text.isEmpty) return;
+                    if (_formationController.text.isEmpty)
+                      return; //Si le bouton retourne du text
                     if (_formation[_controller.selectedDay] != null) {
-                      _formation[_controller.selectedDay]
-                          .add(_formationController.text);
+                      //Si lee bouton sélectionner est différent de null
+                      _formation[_controller.selectedDay].add(_formationController
+                          .text); //Alors sa ajouté une formation sur le calendriers
                     } else {
                       _formation[_controller.selectedDay] = [
                         _formationController.text
@@ -231,7 +247,8 @@ class _Calendrier1State extends State<Calendrier1> {
                     prefs.setString(
                         "formation", json.encode(encodeMap(_formation)));
                     _formationController.clear();
-                    Navigator.pop(context);
+                    Navigator.pop(
+                        context); //Ce Json permet de garder l'affichage de la formation sur le calendrier
                   },
                 )
               ],

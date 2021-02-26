@@ -2,6 +2,7 @@ import 'package:cftc_fpt_34/pdf-maladies/maladie.dart';
 import 'package:flutter/material.dart';
 import 'package:image_ink_well/image_ink_well.dart';
 
+//Même Structure que agent.dart//
 class Conges extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

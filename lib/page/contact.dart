@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // (si le lien marche,utiliser ceci)
+
+//Lien Twitter du syndicat (non demandé au final)//
 // ignore: unused_element
 void _launchLink() async {
   const url = "https://twitter.com/SyndicatCFTC";
@@ -13,6 +15,7 @@ void _launchLink() async {
   }
 }
 
+//Page qui permet de mettre les cooordonnées du syndicat
 class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -65,7 +68,7 @@ class Contact extends StatelessWidget {
                   letterSpacing: 1,
                 ),
               )),
-
+//Chaque Stack contient une icon avec son propre texte//
           Stack(children: [
             Positioned(
                 top: 85.0,

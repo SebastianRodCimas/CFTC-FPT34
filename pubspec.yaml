@@ -1,29 +1,18 @@
 name: cftc_fpt_34
 description: Application du CFTC-FTP 34
-
-# The following line prevents the package from being accidentally published to
-# pub.dev using `pub publish`. This is preferred for private packages.
+# on ajout un name et une description
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-# The following defines the version and build number for your application.
-# A version number is three numbers separated by dots, like 1.2.43
-# followed by an optional build number separated by a +.
-# Both the version and the builder number may be overridden in flutter
-# build by specifying --build-name and --build-number, respectively.
-# In Android, build-name is used as versionName while build-number used as versionCode.
-# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
-# In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
-# Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.1+2
-
+#la version de l'appli
 environment:
   sdk: ">=2.7.0 <3.0.0"
-
+#version du sdk
 dependencies:
   flutter:
     sdk: flutter
-
+  #on utilisera le sdk de flutter pour compiler tout ça
+  #Touts les packages que nous avons utilisé sont ici avec chacun sa propre version
   flutter_cache_manager: ^2.1.1
   splashscreen: ^1.3.5
   table_calendar: ^2.3.3
@@ -43,6 +32,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+    #ajout d'une icone pour l'appli
   flutter_launcher_icons: ^0.8.1
 flutter_icons:
   android: "launcher_icon"
@@ -58,6 +49,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  #toutes les images et les pdf sont ici avec chacun son chemin relative
   assets:
     - assets/maladie.png
     - assets/agent.png

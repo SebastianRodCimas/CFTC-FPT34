@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 
+//Meme code que touts les autres PDF//
 void selectpdf() {}
 
 class CAP extends StatefulWidget {
@@ -9,8 +10,9 @@ class CAP extends StatefulWidget {
 }
 
 class _CAP extends State<CAP> {
-  PDFDocument _doc;
-  bool _loading;
+  PDFDocument
+      _doc; //cette variable sera définis comme le PDF qu'on veut montrer
+  bool _loading; //chargement
 
   void initState() {
     super.initState();
@@ -19,18 +21,20 @@ class _CAP extends State<CAP> {
 
   _initPdf() async {
     setState(() {
-      _loading = true;
+      _loading = true; //si le chargement du pdf est bon alors
     });
-    final doc = await PDFDocument.fromAsset('docActu/cap.pdf');
+    final doc =
+        await PDFDocument.fromAsset('docActu/cap.pdf'); //on montre le pdf
     setState(() {
       _doc = doc;
-      _loading = false;
+      _loading = false; //si le chargement est faux,reviens en arrière
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        //Header//
         appBar: AppBar(actions: <Widget>[
           Row(children: [
             Center(
@@ -59,10 +63,12 @@ class _CAP extends State<CAP> {
           Image.asset('assets/logo.png'),
         ]),
         backgroundColor: Color(0xFF360C29),
+        //page de chargement entre la page actualité et le pdf CAP
         body: _loading
             ? Center(
                 child: CircularProgressIndicator(),
               )
+            //Package advance pdf, structure du pdf
             : PDFViewer(
                 document: _doc,
                 indicatorBackground: Color(4282856587),

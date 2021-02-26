@@ -4,6 +4,7 @@ import '../pdf-mag/voix3..dart';
 import '../pdf-mag/voix1.dart';
 import '../pdf-mag/voix2.dart';
 
+//Même structure que actualite.dart//
 class LeMag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
