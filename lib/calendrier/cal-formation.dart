@@ -27,7 +27,7 @@ class _Calendrier1State extends State<Calendrier1> {
   void initState() {
     //Cette méthode  est utilisé lorsque le widget est inséré dans l'arbre des widgets
     super
-        .initState(); //Cette méthode est la meilleur méthode pour initialiser les données qui reposent sur le BuildContex
+        .initState(); //Cette méthode est la meilleur méthode pour initialiser les données qui reposent sur le BuildContext
     _selectformation = [];
     _controller = CalendarController();
     _formation = {};
