@@ -25,7 +25,9 @@ class _Calendrier1State extends State<Calendrier1> {
 
   @override
   void initState() {
-    super.initState();
+    //Cette méthode  est utilisé lorsque le widget est inséré dans l'arbre des widgets
+    super
+        .initState(); //Cette méthode est la meilleur méthode pour initialiser les données qui reposent sur le BuildContex
     _selectformation = [];
     _controller = CalendarController();
     _formation = {};
@@ -39,12 +41,13 @@ class _Calendrier1State extends State<Calendrier1> {
     setState(() {
       _formation = Map<DateTime, List<dynamic>>.from(
           decodeMap(json.decode(prefs.getString("formation") ?? "{}")));
-    });
+    }); //json qui est decode en étant relier à la liste dynamic _formation
   }
 
   Map<String, dynamic> encodeMap(Map<DateTime, dynamic> map) {
     Map<String, dynamic> newMap = {};
     map.forEach((key, value) {
+      // exécute une fonction donnée sur chaque élément clé-valeur.
       newMap[key.toString()] = map[key];
     });
     return newMap;
