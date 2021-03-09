@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/* Code pour le SplashScreen*/
+//? Code pour le SplashScreen//
 class Splash extends StatefulWidget {
   @override
   _SplashState createState() => _SplashState();
