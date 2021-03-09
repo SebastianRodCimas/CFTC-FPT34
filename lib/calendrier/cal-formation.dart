@@ -9,25 +9,25 @@ class Calendrier1 extends StatefulWidget {
   _Calendrier1State createState() => _Calendrier1State();
 }
 
-/* Cette class va regroup toutes les variables utiliser dans le calendrier*/
+//? Cette class va regroup toutes les variables utiliser dans le calendrier//
 class _Calendrier1State extends State<Calendrier1> {
-  SharedPreferences prefs; //Provient du package shared_preferences.dart';//
+  SharedPreferences prefs; //!Provient du package shared_preferences.dart';//
   CalendarController
-      _controller; //Provient du package table_calendar pour créer un calendrier//
+      _controller; //!Provient du package table_calendar pour créer un calendrier//
   Map<DateTime, List<dynamic>>
-      _formation; //Liste dynamic qui va permettre d'ajouté une formation//
+      _formation; //!Liste dynamic qui va permettre d'ajouté une formation//
   TextEditingController
-      _formationController; //Cette variable va pouvoir écrire un texte quand on va add une formation//
+      _formationController; //*!Cette variable va pouvoir écrire un texte quand on va add une formation//
   List<dynamic>
-      _selectformation; //Seconde liste on va pouvoir select une formation sur le calendrier//
+      _selectformation; //!Seconde liste on va pouvoir select une formation sur le calendrier//
   bool isButtonPressed =
-      false; //Si le button est faux , renvoie vers a la page initiale//
+      false; //!Si le button est faux , renvoie vers a la page initiale//
 
   @override
   void initState() {
-    //Cette méthode  est utilisé lorsque le widget est inséré dans l'arbre des widgets
+    //?Cette méthode  est utilisé lorsque le widget est inséré dans l'arbre des widgets
     super
-        .initState(); //Cette méthode est la meilleur méthode pour initialiser les données qui reposent sur le BuildContext
+        .initState(); //?Cette méthode est la meilleur méthode pour initialiser les données qui reposent sur le BuildContext
     _selectformation = [];
     _controller = CalendarController();
     _formation = {};
@@ -41,7 +41,7 @@ class _Calendrier1State extends State<Calendrier1> {
     setState(() {
       _formation = Map<DateTime, List<dynamic>>.from(
           decodeMap(json.decode(prefs.getString("formation") ?? "{}")));
-    }); //json qui est decode en étant relier à la liste dynamic _formation
+    }); //?json qui est decode en étant relier à la liste dynamic _formation
   }
 
   Map<String, dynamic> encodeMap(Map<DateTime, dynamic> map) {
@@ -222,13 +222,13 @@ class _Calendrier1State extends State<Calendrier1> {
     );
   }
 
-//Fonction qui add une formation
+//!Fonction qui add une formation
 
   _addFormation() async {
     await showDialog(
         context: context,
         builder: (context) => AlertDialog(
-              //On utilise alerte dialog pour relier le controller et _formationController
+              //*On utilise alerte dialog pour relier le controller et _formationController
               content: TextField(
                 controller: _formationController,
               ),
@@ -237,11 +237,11 @@ class _Calendrier1State extends State<Calendrier1> {
                   child: Text("Ajouté une formation"),
                   onPressed: () {
                     if (_formationController.text.isEmpty)
-                      return; //Si le bouton retourne du text
+                      return; //?Si le bouton retourne du text
                     if (_formation[_controller.selectedDay] != null) {
-                      //Si lee bouton sélectionner est différent de null
+                      //?Si lee bouton sélectionner est différent de null
                       _formation[_controller.selectedDay].add(_formationController
-                          .text); //Alors sa ajouté une formation sur le calendriers
+                          .text); //?Alors sa ajouté une formation sur le calendriers
                     } else {
                       _formation[_controller.selectedDay] = [
                         _formationController.text
