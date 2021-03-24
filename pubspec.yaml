@@ -51,6 +51,10 @@ flutter:
 
   #toutes les images et les pdf sont ici avec chacun son chemin relative
   assets:
+    - assets/epsi.png
+    - assets/macif.jpg
+    - assets/mutuel.png
+    - assets/prefon.jpg
     - assets/maladie.png
     - assets/agent.png
     - assets/logo.png

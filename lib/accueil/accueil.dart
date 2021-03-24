@@ -137,8 +137,7 @@ class Accueil extends StatelessWidget {
                               image: new DecorationImage(
                         fit: BoxFit.contain,
                         alignment: Alignment(-0.35, 0.00),
-                        image: new NetworkImage(
-                            'https://media-exp1.licdn.com/dms/image/C560BAQHCQ9s-60QB7A/company-logo_200_200/0/1519884257074?e=2159024400&v=beta&t=6l6TIvYycZFgzRvX_RdUO0PAfZ2Bczgk00IJVFaAX6c'),
+                        image: new AssetImage('assets/mutuel.png'),
                       ))))),
               Stack(children: [
                 Align(
@@ -149,8 +148,7 @@ class Accueil extends StatelessWidget {
                                 image: new DecorationImage(
                           fit: BoxFit.contain,
                           alignment: Alignment(0.31, 0.00),
-                          image: new NetworkImage(
-                              'https://reassurez-moi.fr/guide/wp-content/uploads/2019/02/macif-contact-assistance.jpg'),
+                          image: new AssetImage('assets/macif.jpg'),
                         ))))),
                 Stack(children: [
                   Align(
@@ -161,8 +159,7 @@ class Accueil extends StatelessWidget {
                                   image: new DecorationImage(
                             fit: BoxFit.contain,
                             alignment: Alignment.bottomLeft,
-                            image: new NetworkImage(
-                                'https://www.figs-education.com/wp-content/uploads/2020/09/logoepsi-400x400.png'),
+                            image: new AssetImage('assets/epsi.png'),
                           ))))),
                   Stack(children: [
                     Align(
@@ -173,8 +170,7 @@ class Accueil extends StatelessWidget {
                                     image: new DecorationImage(
                               fit: BoxFit.contain,
                               alignment: Alignment.bottomRight,
-                              image: new NetworkImage(
-                                  'https://www.plurelya.fr/wp-content/uploads/Prefon.jpg'),
+                              image: new AssetImage('assets/prefon.jpg'),
                             ))))),
                   ]),
                 ]),
