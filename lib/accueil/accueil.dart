@@ -212,7 +212,7 @@ class Accueil extends StatelessWidget {
         //Main Body
         backgroundColor: Color(0xFF302878),
         body: Center(
-            child: Stack(children: [
+            child: Stack(fit: StackFit.expand, children: [
           Positioned(
               top: 130,
               left: 55,
@@ -227,8 +227,7 @@ class Accueil extends StatelessWidget {
                   letterSpacing: 1,
                 ),
               )),
-          Spacer(),
-          Stack(children: [
+          Stack(fit: StackFit.expand, children: [
             Align(
               alignment: Alignment(0.00, -0.02),
               child: Image.asset('assets/mongolfiere.jpeg'),
