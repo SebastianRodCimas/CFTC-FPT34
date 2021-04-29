@@ -24,9 +24,9 @@ dependencies:
   google_fonts: ^1.1.1
   font_awesome_flutter: ^8.11.0
   flutter_clean_calendar: ^1.0.2+1
-  shared_preferences: ^0.5.12+4
+  shared_preferences: ^2.0.5
   rename: ^1.2.0
-  path_provider: ^1.6.27
+  path_provider: ^2.0.1
   native_pdf_view: ^4.0.0
 
 dev_dependencies:

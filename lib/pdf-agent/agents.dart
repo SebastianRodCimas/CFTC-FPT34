@@ -1,83 +1,96 @@
-import 'dart:io';
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
+import 'package:native_pdf_view/native_pdf_view.dart';
 
-File pdf;
-void selectpdf() async {
-  pdf = await FilePicker.getFile();
-  print(pdf);
-}
+void selectpdf() {}
 
 class Agents extends StatefulWidget {
   @override
-  _Agents createState() => _Agents();
+  _AgentsState createState() => _AgentsState();
 }
 
-class _Agents extends State<Agents> {
-  PDFDocument _doc;
-  bool _loading;
+class _AgentsState extends State<Agents> {
+  static final int _initialPage = 2;
+  int _actualPageNumber = _initialPage, _allPagesCount = 0;
+  bool isSampleDoc = true;
+  PdfController _pdfController;
 
+  @override
   void initState() {
+    _pdfController = PdfController(
+      document: PdfDocument.openAsset('docActu/protectionsociale-decembre.pdf'),
+      initialPage: _initialPage,
+    );
     super.initState();
-    _initPdf();
-  }
-
-  _initPdf() async {
-    setState(() {
-      _loading = true;
-    });
-    final doc = await PDFDocument.fromAsset('docAgent/agent.pdf');
-    setState(() {
-      _doc = doc;
-      _loading = false;
-    });
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(actions: <Widget>[
-          Row(children: [
-            Center(
-              child:
-                  Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
-                        color: Color(4280498574),
-                      )),
-            ),
-            Row(children: [
-              Center(
+  void dispose() {
+    _pdfController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => MaterialApp(
+        theme: ThemeData(primaryColor: Colors.white),
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('YES'),
+            actions: <Widget>[
+              IconButton(
+                icon: Icon(Icons.navigate_before),
+                onPressed: () {
+                  _pdfController.previousPage(
+                    curve: Curves.ease,
+                    duration: Duration(milliseconds: 100),
+                  );
+                },
+              ),
+              Container(
+                alignment: Alignment.center,
                 child: Text(
-                  "   CFTC-FTP 34  ",
-                  style: TextStyle(
-                    fontSize: 12.4,
-                    fontWeight: FontWeight.w800,
-                    color: Color(4280498574),
-                  ),
+                  '$_actualPageNumber/$_allPagesCount',
+                  style: TextStyle(fontSize: 22),
                 ),
               ),
-            ]),
-          ]),
-          Image.asset('assets/logo.png'),
-        ]),
-
-        //Body
-        backgroundColor: Color(0xFF360C29),
-        body: _loading
-            ? Center(
-                child: CircularProgressIndicator(),
+              IconButton(
+                icon: Icon(Icons.navigate_next),
+                onPressed: () {
+                  _pdfController.nextPage(
+                    curve: Curves.ease,
+                    duration: Duration(milliseconds: 100),
+                  );
+                },
+              ),
+              IconButton(
+                icon: Icon(Icons.refresh),
+                onPressed: () {
+                  if (isSampleDoc) {
+                    _pdfController.loadDocument(PdfDocument.openFile(
+                        'docActu/protectionsociale-decembre.pdf'));
+                  } else {
+                    _pdfController.loadDocument(PdfDocument.openFile(
+                        'docActu/protectionsociale-decembre.pdf'));
+                  }
+                  isSampleDoc = !isSampleDoc;
+                },
               )
-            : PDFViewer(
-                document: _doc,
-                indicatorBackground: Color(4282856587),
-                pickerIconColor: Colors.deepPurple,
-                pickerButtonColor: Color(4278301376),
-                showIndicator: true,
-                showPicker: true,
-              ));
-  }
+            ],
+          ),
+          body: PdfView(
+            documentLoader: Center(child: CircularProgressIndicator()),
+            pageLoader: Center(child: CircularProgressIndicator()),
+            controller: _pdfController,
+            onDocumentLoaded: (document) {
+              setState(() {
+                _allPagesCount = document.pagesCount;
+              });
+            },
+            onPageChanged: (page) {
+              setState(() {
+                _actualPageNumber = page;
+              });
+            },
+          ),
+        ),
+      );
 }
