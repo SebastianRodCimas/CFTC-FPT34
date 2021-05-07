@@ -10,9 +10,8 @@ class PS extends StatefulWidget {
 }
 
 class _PSState extends State<PS> {
-  static final int _initialPage = 2;
+  static final int _initialPage = 1;
   int _actualPageNumber = _initialPage, _allPagesCount = 0;
-  bool isSampleDoc = true;
   PdfController _pdfController;
 
   @override

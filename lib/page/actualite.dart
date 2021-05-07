@@ -1,5 +1,6 @@
 import 'package:cftc_fpt_34/pdf-actu/cap.dart';
 import 'package:cftc_fpt_34/pdf-actu/collectivites.dart';
+import 'package:cftc_fpt_34/pdf-actu/deces.dart';
 import 'package:cftc_fpt_34/pdf-actu/egalite.dart';
 import 'package:cftc_fpt_34/pdf-actu/enfant.dart';
 import 'package:cftc_fpt_34/pdf-actu/fonctionpublique.dart';
@@ -295,7 +296,7 @@ class Actualite extends StatelessWidget {
             ),
             onTap: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => new Egalite()));
+                  new MaterialPageRoute(builder: (context) => new Deces()));
             },
           ),
           Stack(
@@ -307,7 +308,7 @@ class Actualite extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => new Egalite()));
+                              builder: (context) => new Deces()));
                     },
                     width: 200,
                     height: 95,
