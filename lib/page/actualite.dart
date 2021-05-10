@@ -18,16 +18,16 @@ class Actualite extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: AppBar(actions: <Widget>[
-          Align(
-              alignment: Alignment(1.50, -0.15),
+          Row(children: [
+            Align(
+              alignment: Alignment(1.50, -0.00),
               child: Row(children: [
                 IconButton(
                   icon: Icon(
                     Icons.arrow_left_sharp,
                     color: Colors.blue.shade400,
                   ),
-                  color: Colors.white,
-                  iconSize: 30,
+                  iconSize: 37,
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -41,7 +41,7 @@ class Actualite extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
+                        fontSize: 12.0,
                         color: Color(4280498574),
                       )),
                 ),
@@ -58,7 +58,9 @@ class Actualite extends StatelessWidget {
                   ),
                 ]),
                 Image.asset('assets/logo.png'),
-              ])),
+              ]),
+            )
+          ])
         ]),
         //Body
         backgroundColor: Color(0xFF47348B),

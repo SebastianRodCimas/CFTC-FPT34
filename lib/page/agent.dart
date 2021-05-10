@@ -1,3 +1,4 @@
+import 'package:cftc_fpt_34/accueil/accueil.dart';
 import 'package:cftc_fpt_34/pdf-agent/agents.dart';
 import 'package:flutter/material.dart';
 import 'package:image_ink_well/image_ink_well.dart';
@@ -10,30 +11,48 @@ class Agent extends StatelessWidget {
         //Header
         appBar: AppBar(actions: <Widget>[
           Row(children: [
-            Center(
-              child:
-                  Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
+            Align(
+              alignment: Alignment(1.50, -0.00),
+              child: Row(children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.arrow_left_sharp,
+                    color: Colors.blue.shade400,
+                  ),
+                  iconSize: 37,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new Accueil()));
+                  },
+                ),
+                Center(
+                  child: Text(
+                      "Syndicat Constructif,\nPartenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
+                        fontSize: 12.0,
                         color: Color(4280498574),
                       )),
-            ),
-            Row(children: [
-              Center(
-                child: Text(
-                  "   CFTC-FTP 34  ",
-                  style: TextStyle(
-                    fontSize: 12.4,
-                    fontWeight: FontWeight.w800,
-                    color: Color(4280498574),
-                  ),
                 ),
-              ),
-            ]),
-          ]),
-          Image.asset('assets/logo.png'),
+                Row(children: [
+                  Center(
+                    child: Text(
+                      "   CFTC-FTP 34  ",
+                      style: TextStyle(
+                        fontSize: 12.4,
+                        fontWeight: FontWeight.w800,
+                        color: Color(4280498574),
+                      ),
+                    ),
+                  ),
+                ]),
+                Image.asset('assets/logo.png'),
+              ]),
+            )
+          ])
         ]),
         //Body
         backgroundColor: Color(0xFF47348B),

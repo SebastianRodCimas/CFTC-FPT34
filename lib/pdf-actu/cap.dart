@@ -47,7 +47,7 @@ class _CAPState extends State<CAP> {
                   },
                 ),
                 Center(
-                  child: Text("Attribution CAP",
+                  child: Text("    Attribution CAP",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,

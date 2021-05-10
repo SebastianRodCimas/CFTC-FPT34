@@ -1,3 +1,4 @@
+import 'package:cftc_fpt_34/page/agent.dart';
 import 'package:flutter/material.dart';
 import 'package:native_pdf_view/native_pdf_view.dart';
 
@@ -9,15 +10,14 @@ class Agents extends StatefulWidget {
 }
 
 class _AgentsState extends State<Agents> {
-  static final int _initialPage = 2;
+  static final int _initialPage = 1;
   int _actualPageNumber = _initialPage, _allPagesCount = 0;
-  bool isSampleDoc = true;
   PdfController _pdfController;
 
   @override
   void initState() {
     _pdfController = PdfController(
-      document: PdfDocument.openAsset('docActu/protectionsociale-decembre.pdf'),
+      document: PdfDocument.openAsset('docAgent/agent.pdf'),
       initialPage: _initialPage,
     );
     super.initState();
@@ -31,51 +31,65 @@ class _AgentsState extends State<Agents> {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-        theme: ThemeData(primaryColor: Colors.white),
+        theme: ThemeData(primaryColor: Colors.lightBlueAccent),
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('YES'),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(Icons.navigate_before),
-                onPressed: () {
-                  _pdfController.previousPage(
-                    curve: Curves.ease,
-                    duration: Duration(milliseconds: 100),
-                  );
-                },
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: Text(
-                  '$_actualPageNumber/$_allPagesCount',
-                  style: TextStyle(fontSize: 22),
+          appBar: AppBar(actions: <Widget>[
+            Row(
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_back_sharp),
+                  color: Colors.white,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new Agent()));
+                  },
                 ),
-              ),
-              IconButton(
-                icon: Icon(Icons.navigate_next),
-                onPressed: () {
-                  _pdfController.nextPage(
-                    curve: Curves.ease,
-                    duration: Duration(milliseconds: 100),
-                  );
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.refresh),
-                onPressed: () {
-                  if (isSampleDoc) {
-                    _pdfController.loadDocument(PdfDocument.openFile(
-                        'docActu/protectionsociale-decembre.pdf'));
-                  } else {
-                    _pdfController.loadDocument(PdfDocument.openFile(
-                        'docActu/protectionsociale-decembre.pdf'));
-                  }
-                  isSampleDoc = !isSampleDoc;
-                },
-              )
-            ],
-          ),
+                Center(
+                  child: Text("Guide de l'agent",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w800,
+                        fontSize: 15.0,
+                        color: Color(4280498574),
+                      )),
+                ),
+                IconButton(
+                  icon: Icon(Icons.navigate_before),
+                  color: Color(4280498574),
+                  onPressed: () {
+                    _pdfController.previousPage(
+                      curve: Curves.ease,
+                      duration: Duration(milliseconds: 100),
+                    );
+                  },
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    '$_actualPageNumber/$_allPagesCount',
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Color(4280498574),
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.navigate_next),
+                  color: Color(4280498574),
+                  onPressed: () {
+                    _pdfController.nextPage(
+                      curve: Curves.ease,
+                      duration: Duration(milliseconds: 100),
+                    );
+                  },
+                ),
+                Image.asset('assets/logo.png'),
+              ],
+            ),
+          ]),
+          backgroundColor: Color(0xFF302878),
           body: PdfView(
             documentLoader: Center(child: CircularProgressIndicator()),
             pageLoader: Center(child: CircularProgressIndicator()),
