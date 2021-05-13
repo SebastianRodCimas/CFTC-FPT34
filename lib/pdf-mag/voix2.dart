@@ -70,7 +70,7 @@ class _Voix2State extends State<Voix2> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 20,
                       color: Color(4280498574),
                     ),
                   ),

@@ -51,7 +51,7 @@ class _MaladieState extends State<Maladie> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 14.5,
+                        fontSize: 13.5,
                         color: Color(4280498574),
                       )),
                 ),
@@ -70,7 +70,7 @@ class _MaladieState extends State<Maladie> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 20,
                       color: Color(4280498574),
                     ),
                   ),

@@ -51,7 +51,7 @@ class _Voix1State extends State<Voix1> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 14.8,
+                        fontSize: 13.8,
                         color: Color(4280498574),
                       )),
                 ),
@@ -70,7 +70,7 @@ class _Voix1State extends State<Voix1> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 20,
                       color: Color(4280498574),
                     ),
                   ),

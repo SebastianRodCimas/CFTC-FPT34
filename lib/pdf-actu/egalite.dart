@@ -51,7 +51,7 @@ class _EgalitState extends State<Egalite> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.8,
+                        fontSize: 12.0,
                         color: Color(4280498574),
                       )),
                 ),
@@ -70,7 +70,7 @@ class _EgalitState extends State<Egalite> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 16,
                       color: Color(4280498574),
                     ),
                   ),

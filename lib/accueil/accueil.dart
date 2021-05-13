@@ -185,11 +185,11 @@ class Accueil extends StatelessWidget {
           Row(children: [
             Center(
               child:
-                  Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
+                  Text("Syndicat Constructif,\n  Partenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
+                        fontSize: 11.0,
                         color: Color(4280498574),
                       )),
             ),
@@ -198,7 +198,7 @@ class Accueil extends StatelessWidget {
                 child: Text(
                   "   CFTC-FTP 34  ",
                   style: TextStyle(
-                    fontSize: 12.4,
+                    fontSize: 12.0,
                     fontWeight: FontWeight.w800,
                     color: Color(4280498574),
                   ),

@@ -75,21 +75,21 @@ class _Calendrier2State extends State<Calendrier2> {
                 },
               ),
               Center(
-                child:
-                    Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w800,
-                          fontSize: 12.0,
-                          color: Color(4280498574),
-                        )),
+                child: Text(
+                    "   Syndicat Constructif,\n  Partenaire du Dialogue Social",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 11,
+                      color: Color(4280498574),
+                    )),
               ),
               Row(children: [
                 Center(
                   child: Text(
-                    "   CFTC-FTP 34  ",
+                    "CFTC-FTP 34",
                     style: TextStyle(
-                      fontSize: 12.4,
+                      fontSize: 12.0,
                       fontWeight: FontWeight.w800,
                       color: Color(4280498574),
                     ),

@@ -70,7 +70,7 @@ class _DecesState extends State<Deces> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 20,
                       color: Color(4280498574),
                     ),
                   ),

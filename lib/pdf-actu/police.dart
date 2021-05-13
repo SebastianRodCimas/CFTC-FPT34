@@ -51,7 +51,7 @@ class _PoliceState extends State<Police> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 13.7,
+                        fontSize: 13.0,
                         color: Color(4280498574),
                       )),
                 ),
@@ -70,7 +70,7 @@ class _PoliceState extends State<Police> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       color: Color(4280498574),
                     ),
                   ),

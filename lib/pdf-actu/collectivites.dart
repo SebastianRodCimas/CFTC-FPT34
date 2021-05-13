@@ -51,7 +51,7 @@ class _CollectState extends State<Collect> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 14.0,
+                        fontSize: 13.0,
                         color: Color(4280498574),
                       )),
                 ),
@@ -70,7 +70,7 @@ class _CollectState extends State<Collect> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 15,
                       color: Color(4280498574),
                     ),
                   ),

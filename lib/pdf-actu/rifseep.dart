@@ -70,7 +70,7 @@ class _RifseepState extends State<Rifseep> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 17,
+                      fontSize: 14,
                       color: Color(4280498574),
                     ),
                   ),

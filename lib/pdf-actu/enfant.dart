@@ -51,7 +51,7 @@ class _EnfantState extends State<Enfant> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 15.0,
+                        fontSize: 14.0,
                         color: Color(4280498574),
                       )),
                 ),
@@ -70,7 +70,7 @@ class _EnfantState extends State<Enfant> {
                   child: Text(
                     '$_actualPageNumber/$_allPagesCount',
                     style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 20,
                       color: Color(4280498574),
                     ),
                   ),
