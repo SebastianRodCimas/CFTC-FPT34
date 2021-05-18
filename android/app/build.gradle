@@ -13,12 +13,12 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '4'
+    flutterVersionCode = '7'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '4.0.1'
+    flutterVersionName = '1.0.7'
 }
 
 apply plugin: 'com.android.application'
@@ -32,8 +32,9 @@ def keystoreProperties = new Properties()
    }
 
 android {
+    ndkVersion "22.1.7171670"
     compileSdkVersion 30
-   
+ 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -45,6 +46,9 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+         ndk {
+            debugSymbolLevel 'SYMBOL_TABLE'
+        }
     }
     signingConfigs {
          release {
@@ -58,7 +62,14 @@ android {
    
     buildTypes {
         release {
-           
+         
+             minifyEnabled true
+            proguardFiles getDefaultProguardFile(
+              'proguard-android-optimize.txt'),
+              // List additional ProGuard rules for the given build type here. By default,
+              // Android Studio creates and includes an empty rules file for you (located
+              // at the root directory of each module).
+              'proguard-rules.pro'
 
             
             signingConfig signingConfigs.release
@@ -74,3 +85,4 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     
 }
+
