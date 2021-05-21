@@ -31,7 +31,7 @@ class Accueil extends StatelessWidget {
             ]))),
             ListTile(
               title: Text(
-                '                     Documents',
+                '                     Actualités',
                 style: TextStyle(
                   color: Color(0xFF951B81),
                   fontSize: 18,

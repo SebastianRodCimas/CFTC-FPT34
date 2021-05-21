@@ -3,7 +3,7 @@ description: Application du CFTC-FTP 34
 # on ajout un name et une description
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.1+7
+version: 1.0.1+8
 #la version de l'appli
 environment:
   sdk: ">=2.7.0 <3.0.0"
