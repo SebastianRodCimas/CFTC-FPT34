@@ -2,6 +2,7 @@ import 'package:cftc_fpt_34/page/actualite.dart';
 import 'package:flutter/material.dart';
 import 'package:native_pdf_view/native_pdf_view.dart';
 
+//!Afficher un pdf parmis les actualités
 void selectpdf() {}
 
 class PS extends StatefulWidget {
@@ -10,9 +11,10 @@ class PS extends StatefulWidget {
 }
 
 class _PSState extends State<PS> {
-  static final int _initialPage = 1;
-  int _actualPageNumber = _initialPage, _allPagesCount = 0;
-  PdfController _pdfController;
+  static final int _initialPage = 1; //on commence par la page 1
+  int _actualPageNumber = _initialPage,
+      _allPagesCount = 0; //*Permet de switch entre les pages du doc
+  PdfController _pdfController; //?Controller qui affiche le doc
 
   @override
   void initState() {
