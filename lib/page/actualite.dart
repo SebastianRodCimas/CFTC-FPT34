@@ -1,51 +1,74 @@
-import 'package:cftc/pdf-actu/cap.dart';
-import 'package:cftc/pdf-actu/collectivites.dart';
-import 'package:cftc/pdf-actu/egalite.dart';
-import 'package:cftc/pdf-actu/enfant.dart';
-import 'package:cftc/pdf-actu/fonctionpublique.dart';
-import 'package:cftc/pdf-actu/police.dart';
-import 'package:cftc/pdf-actu/rifseep.dart';
-import 'package:cftc/pdf-actu/ultramarin.dart';
+import 'package:cftc_fpt_34/accueil/accueil.dart';
+import 'package:cftc_fpt_34/pdf-actu/cap.dart';
+import 'package:cftc_fpt_34/pdf-actu/collectivites.dart';
+import 'package:cftc_fpt_34/pdf-actu/deces.dart';
+import 'package:cftc_fpt_34/pdf-actu/egalite.dart';
+import 'package:cftc_fpt_34/pdf-actu/enfant.dart';
+import 'package:cftc_fpt_34/pdf-actu/fonctionpublique.dart';
+import 'package:cftc_fpt_34/pdf-actu/police.dart';
+import 'package:cftc_fpt_34/pdf-actu/rifseep.dart';
+import 'package:cftc_fpt_34/pdf-actu/ultramarin.dart';
 import 'package:flutter/material.dart';
 import 'package:image_ink_well/image_ink_well.dart';
 import '../pdf-actu/protectionsocial.dart';
 
+//touts les pages sont relié afin que chaque page soit relié à son PDF
 class Actualite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: AppBar(actions: <Widget>[
           Row(children: [
-            Center(
-              child:
-                  Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
+            Align(
+              alignment: Alignment(1.50, -0.00),
+              child: Row(children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.arrow_left_sharp,
+                    color: Colors.blue.shade400,
+                  ),
+                  iconSize: 37,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new Accueil()));
+                  },
+                ),
+                Center(
+                  child: Text(
+                      "   Syndicat Constructif,\n  Partenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
+                        fontSize: 11,
                         color: Color(4280498574),
                       )),
-            ),
-            Row(children: [
-              Center(
-                child: Text(
-                  "   CFTC-FTP 34  ",
-                  style: TextStyle(
-                    fontSize: 12.4,
-                    fontWeight: FontWeight.w800,
-                    color: Color(4280498574),
-                  ),
                 ),
-              ),
-            ]),
-          ]),
-          Image.asset('assets/logo.png'),
+                Row(children: [
+                  Center(
+                    child: Text(
+                      "CFTC-FTP 34",
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w800,
+                        color: Color(4280498574),
+                      ),
+                    ),
+                  ),
+                ]),
+                Image.asset('assets/logo.png'),
+              ]),
+            )
+          ])
         ]),
         //Body
         backgroundColor: Color(0xFF47348B),
         body: Center(
+            //ListView pour faire pluseiurs ListTitle sous forme de colonne
             child: ListView(children: <Widget>[
           Container(child: Column(children: <Widget>[])),
+          //Config du titre
           ListTile(
             title: Text(
               '                         Protection Sociale',
@@ -56,11 +79,14 @@ class Actualite extends StatelessWidget {
                 fontFamily: "Oswald",
               ),
             ),
+            //Une fois cliqué dessus, ça nous dirige vers le PDF demandé
             onTap: () {
               Navigator.push(context,
                   new MaterialPageRoute(builder: (context) => new PS()));
             },
           ),
+
+          //Image pour présenter le titre
           Stack(
             children: [
               Align(
@@ -78,6 +104,7 @@ class Actualite extends StatelessWidget {
                   )),
             ],
           ),
+          //Titre mis pour montrer si c'est plus ou moin réçent
           Align(
               alignment: Alignment.topRight,
               child: Text(
@@ -288,7 +315,7 @@ class Actualite extends StatelessWidget {
             ),
             onTap: () {
               Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => new Egalite()));
+                  new MaterialPageRoute(builder: (context) => new Deces()));
             },
           ),
           Stack(
@@ -300,7 +327,7 @@ class Actualite extends StatelessWidget {
                       Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => new Egalite()));
+                              builder: (context) => new Deces()));
                     },
                     width: 200,
                     height: 95,

@@ -1,7 +1,10 @@
+import 'package:cftc_fpt_34/accueil/accueil.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // (si le lien marche,utiliser ceci)
+
+//Lien Twitter du syndicat (non demandé au final)//
 // ignore: unused_element
 void _launchLink() async {
   const url = "https://twitter.com/SyndicatCFTC";
@@ -13,36 +16,55 @@ void _launchLink() async {
   }
 }
 
+//Page qui permet de mettre les cooordonnées du syndicat
 class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: AppBar(actions: <Widget>[
           Row(children: [
-            Center(
-              child:
-                  Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
+            Align(
+              alignment: Alignment(1.50, -0.00),
+              child: Row(children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.arrow_left_sharp,
+                    color: Colors.blue.shade400,
+                  ),
+                  iconSize: 37,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new Accueil()));
+                  },
+                ),
+                Center(
+                  child: Text(
+                      "   Syndicat Constructif,\n  Partenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
+                        fontSize: 11,
                         color: Color(4280498574),
                       )),
-            ),
-            Row(children: [
-              Center(
-                child: Text(
-                  "   CFTC-FTP 34  ",
-                  style: TextStyle(
-                    fontSize: 12.4,
-                    fontWeight: FontWeight.w800,
-                    color: Color(4280498574),
-                  ),
                 ),
-              ),
-            ]),
-          ]),
-          Image.asset('assets/logo.png'),
+                Row(children: [
+                  Center(
+                    child: Text(
+                      "CFTC-FTP 34",
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w800,
+                        color: Color(4280498574),
+                      ),
+                    ),
+                  ),
+                ]),
+                Image.asset('assets/logo.png'),
+              ]),
+            )
+          ])
         ]),
 
 //Body
@@ -65,7 +87,7 @@ class Contact extends StatelessWidget {
                   letterSpacing: 1,
                 ),
               )),
-
+//Chaque Stack contient une icon avec son propre texte//
           Stack(children: [
             Positioned(
                 top: 85.0,

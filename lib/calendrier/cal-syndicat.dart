@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:cftc_fpt_34/accueil/accueil.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -57,29 +58,48 @@ class _Calendrier2State extends State<Calendrier2> {
     return Scaffold(
       appBar: AppBar(actions: <Widget>[
         Row(children: [
-          Center(
-            child: Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 12.4,
-                  color: Color(4280498574),
-                )),
-          ),
-          Row(children: [
-            Center(
-              child: Text(
-                "   CFTC-FTP 34  ",
-                style: TextStyle(
-                  fontSize: 12.4,
-                  fontWeight: FontWeight.w800,
-                  color: Color(4280498574),
+          Align(
+            alignment: Alignment(1.50, -0.00),
+            child: Row(children: [
+              IconButton(
+                icon: Icon(
+                  Icons.arrow_left_sharp,
+                  color: Colors.blue.shade400,
                 ),
+                iconSize: 37,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new Accueil()));
+                },
               ),
-            ),
-          ]),
-        ]),
-        Image.asset('assets/logo.png'),
+              Center(
+                child: Text(
+                    "   Syndicat Constructif,\n  Partenaire du Dialogue Social",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 11,
+                      color: Color(4280498574),
+                    )),
+              ),
+              Row(children: [
+                Center(
+                  child: Text(
+                    "CFTC-FTP 34",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w800,
+                      color: Color(4280498574),
+                    ),
+                  ),
+                ),
+              ]),
+              Image.asset('assets/logo.png'),
+            ]),
+          )
+        ])
       ]),
       backgroundColor: Color(4278301376),
       body: SingleChildScrollView(

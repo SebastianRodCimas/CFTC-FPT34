@@ -1,39 +1,59 @@
+import 'package:cftc_fpt_34/accueil/accueil.dart';
 import 'package:flutter/material.dart';
 import 'package:image_ink_well/image_ink_well.dart';
 import '../pdf-mag/voix3..dart';
 import '../pdf-mag/voix1.dart';
 import '../pdf-mag/voix2.dart';
 
+//Même structure que actualite.dart//
 class LeMag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: AppBar(actions: <Widget>[
           Row(children: [
-            Center(
-              child:
-                  Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
+            Align(
+              alignment: Alignment(1.50, -0.00),
+              child: Row(children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.arrow_left_sharp,
+                    color: Colors.blue.shade400,
+                  ),
+                  iconSize: 37,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (context) => new Accueil()));
+                  },
+                ),
+                Center(
+                  child: Text(
+                      "   Syndicat Constructif,\n  Partenaire du Dialogue Social",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontWeight: FontWeight.w800,
-                        fontSize: 12.4,
+                        fontSize: 11,
                         color: Color(4280498574),
                       )),
-            ),
-            Row(children: [
-              Center(
-                child: Text(
-                  "   CFTC-FTP 34  ",
-                  style: TextStyle(
-                    fontSize: 12.4,
-                    fontWeight: FontWeight.w800,
-                    color: Color(4280498574),
-                  ),
                 ),
-              ),
-            ]),
-          ]),
-          Image.asset('assets/logo.png'),
+                Row(children: [
+                  Center(
+                    child: Text(
+                      "CFTC-FTP 34",
+                      style: TextStyle(
+                        fontSize: 12.0,
+                        fontWeight: FontWeight.w800,
+                        color: Color(4280498574),
+                      ),
+                    ),
+                  ),
+                ]),
+                Image.asset('assets/logo.png'),
+              ]),
+            )
+          ])
         ]),
         //Body
         backgroundColor: Color(0xFF47348B),

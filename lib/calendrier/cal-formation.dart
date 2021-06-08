@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:cftc_fpt_34/accueil/accueil.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -9,17 +10,25 @@ class Calendrier1 extends StatefulWidget {
   _Calendrier1State createState() => _Calendrier1State();
 }
 
+//? Cette class va regroup toutes les variables utiliser dans le calendrier//
 class _Calendrier1State extends State<Calendrier1> {
-  SharedPreferences prefs;
-  CalendarController _controller;
-  Map<DateTime, List<dynamic>> _formation;
-  TextEditingController _formationController;
-  List<dynamic> _selectformation;
-  bool isButtonPressed = false;
+  SharedPreferences prefs; //!Provient du package shared_preferences.dart';//
+  CalendarController
+      _controller; //!Provient du package table_calendar pour créer un calendrier//
+  Map<DateTime, List<dynamic>>
+      _formation; //!Liste dynamic qui va permettre d'ajouté une formation//
+  TextEditingController
+      _formationController; //*!Cette variable va pouvoir écrire un texte quand on va add une formation//
+  List<dynamic>
+      _selectformation; //!Seconde liste on va pouvoir select une formation sur le calendrier//
+  bool isButtonPressed =
+      false; //!Si le button est faux , renvoie vers a la page initiale//
 
   @override
   void initState() {
-    super.initState();
+    //?Cette méthode  est utilisé lorsque le widget est inséré dans l'arbre des widgets
+    super
+        .initState(); //?Cette méthode est la meilleur méthode pour initialiser les données qui reposent sur le BuildContext
     _selectformation = [];
     _controller = CalendarController();
     _formation = {};
@@ -33,12 +42,13 @@ class _Calendrier1State extends State<Calendrier1> {
     setState(() {
       _formation = Map<DateTime, List<dynamic>>.from(
           decodeMap(json.decode(prefs.getString("formation") ?? "{}")));
-    });
+    }); //?json qui est decode en étant relier à la liste dynamic _formation
   }
 
   Map<String, dynamic> encodeMap(Map<DateTime, dynamic> map) {
     Map<String, dynamic> newMap = {};
     map.forEach((key, value) {
+      // exécute une fonction donnée sur chaque élément clé-valeur.
       newMap[key.toString()] = map[key];
     });
     return newMap;
@@ -55,31 +65,51 @@ class _Calendrier1State extends State<Calendrier1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Header
       appBar: AppBar(actions: <Widget>[
         Row(children: [
-          Center(
-            child: Text("Syndicat Constructif,\nPartenaire du Dialogue Social",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  fontSize: 12.4,
-                  color: Color(4280498574),
-                )),
-          ),
-          Row(children: [
-            Center(
-              child: Text(
-                "   CFTC-FTP 34  ",
-                style: TextStyle(
-                  fontSize: 12.4,
-                  fontWeight: FontWeight.w800,
-                  color: Color(4280498574),
+          Align(
+            alignment: Alignment(1.50, -0.00),
+            child: Row(children: [
+              IconButton(
+                icon: Icon(
+                  Icons.arrow_left_sharp,
+                  color: Colors.blue.shade400,
                 ),
+                iconSize: 37,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (context) => new Accueil()));
+                },
               ),
-            ),
-          ]),
-        ]),
-        Image.asset('assets/logo.png'),
+              Center(
+                child: Text(
+                    "   Syndicat Constructif,\n  Partenaire du Dialogue Social",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w800,
+                      fontSize: 11,
+                      color: Color(4280498574),
+                    )),
+              ),
+              Row(children: [
+                Center(
+                  child: Text(
+                    "CFTC-FTP 34",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.w800,
+                      color: Color(4280498574),
+                    ),
+                  ),
+                ),
+              ]),
+              Image.asset('assets/logo.png'),
+            ]),
+          )
+        ])
       ]),
       backgroundColor: Color(4278301376),
       body: SingleChildScrollView(
@@ -90,6 +120,8 @@ class _Calendrier1State extends State<Calendrier1> {
               decoration: BoxDecoration(
             color: Colors.white,
           )),
+
+          //Structure de la formation//
           TableCalendar(
             events: _formation,
             initialCalendarFormat: CalendarFormat.month,
@@ -198,6 +230,8 @@ class _Calendrier1State extends State<Calendrier1> {
           ]),
         ],
       )),
+
+      //Bouton pour add une formation
       floatingActionButton: FloatingActionButton(
           heroTag: "ajouter une formation",
           shape: CircleBorder(),
@@ -208,10 +242,13 @@ class _Calendrier1State extends State<Calendrier1> {
     );
   }
 
+//!Fonction qui add une formation
+
   _addFormation() async {
     await showDialog(
         context: context,
         builder: (context) => AlertDialog(
+              //*On utilise alerte dialog pour relier le controller et _formationController
               content: TextField(
                 controller: _formationController,
               ),
@@ -219,10 +256,12 @@ class _Calendrier1State extends State<Calendrier1> {
                 TextButton(
                   child: Text("Ajouté une formation"),
                   onPressed: () {
-                    if (_formationController.text.isEmpty) return;
+                    if (_formationController.text.isEmpty)
+                      return; //?Si le bouton retourne du text
                     if (_formation[_controller.selectedDay] != null) {
-                      _formation[_controller.selectedDay]
-                          .add(_formationController.text);
+                      //?Si lee bouton sélectionner est différent de null
+                      _formation[_controller.selectedDay].add(_formationController
+                          .text); //?Alors sa ajouté une formation sur le calendriers
                     } else {
                       _formation[_controller.selectedDay] = [
                         _formationController.text
@@ -231,7 +270,8 @@ class _Calendrier1State extends State<Calendrier1> {
                     prefs.setString(
                         "formation", json.encode(encodeMap(_formation)));
                     _formationController.clear();
-                    Navigator.pop(context);
+                    Navigator.pop(
+                        context); //Ce Json permet de garder l'affichage de la formation sur le calendrier
                   },
                 )
               ],
