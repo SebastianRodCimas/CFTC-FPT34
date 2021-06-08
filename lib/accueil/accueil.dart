@@ -1,11 +1,13 @@
 import 'package:cftc_fpt_34/calendrier/cal-syndicat.dart';
 import 'package:cftc_fpt_34/page/agent.dart';
+import 'package:cftc_fpt_34/page/json.dart';
 import 'package:flutter/material.dart';
 import '../calendrier/cal-formation.dart';
 import '../page/conges.dart';
 import '../page/contact.dart';
 import '../page/mag.dart';
 import '../page/actualite.dart';
+import '../page/json.dart';
 
 class Accueil extends StatelessWidget {
   @override
@@ -124,6 +126,21 @@ class Accueil extends StatelessWidget {
               onTap: () {
                 Navigator.push(context,
                     new MaterialPageRoute(builder: (context) => new Contact()));
+              },
+            ),
+            new ListTile(
+              title: new Text(
+                "                    Formulaire",
+                style: TextStyle(
+                  color: Color(0xFF951B81),
+                  fontSize: 18,
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => new Formulaire()));
               },
             ),
 

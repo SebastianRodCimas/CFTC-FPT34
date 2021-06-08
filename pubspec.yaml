@@ -27,6 +27,7 @@ dependencies:
   rename: ^1.2.0
   path_provider: ^2.0.1
   native_pdf_view: ^4.0.0
+  dio: ^4.0.0
 
 dev_dependencies:
   flutter_test:
